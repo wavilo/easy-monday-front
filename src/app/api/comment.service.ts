@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import 'rxjs/operator/toPromise';
+
+import { environment } from '../../environments/environment'
+import { toPromise } from './to-promise';
 
 @Injectable()
 export class CommentService {
@@ -14,16 +16,14 @@ export class CommentService {
   
   // GET method for all method
   getList(){
-    return this.ajaxTruc
-      .get('http://localhost:3000/api/comments')
-      .toPromise();
+    return toPromise(this.ajaxTruc
+      .get(`${environment.backUrl}/api/comments`));
   }
 
   // GET Method for one comment
   getDetails(commentId){
-    return this.ajaxTruc  
-      .get(`http://localhost:3000/api/comment/${commentId}`)
-      .toPromise();
+    return toPromise(this.ajaxTruc  
+      .get(`${environment.backUrl}/api/comment/${commentId}`));
   }
 
 
@@ -31,9 +31,8 @@ export class CommentService {
   
   // DELETE method for one comment
   delete(commentId){
-    return this.ajaxTruc
-      .delete(`http://localhost:3000/api/comment/${commentId}`)
-      .toPromise();
+    return toPromise(this.ajaxTruc
+      .delete(`${environment.backUrl}/api/comment/${commentId}`));
   }
 }
 

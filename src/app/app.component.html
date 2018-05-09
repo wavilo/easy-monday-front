@@ -1,23 +1,55 @@
 <header>
+
+
+
   <h1>Easy Monday</h1>
   <nav>
 
-    <span *ngIf="!userTruc.currentUser">
-      <a routerLink="/signup">Signup</a>
-      <a routerLink="/login">Login</a>
-    </span>
 
-    <span *ngIf="userTruc.currentUser">
-      <a routerLink="/">Home</a>
-      <a routerLink="/account">Your account</a>
-      <b>{{userTruc.currentUser.name}}</b>
-      <button (click)="logoutClick()">Log Out</button>
-    </span>
 
   </nav>
 </header>
 
-<router-outlet></router-outlet>
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="example-app-name logo">Easy Monday</h1>
+    <span class="ber-toolbar">
+      <span *ngIf="!userTruc.currentUser">
+        <a routerLink="/signup">Signup</a>
+        <a routerLink="/login">Login</a>
+      </span>
+
+      <span *ngIf="userTruc.currentUser">
+        <a routerLink="/">Home</a>
+        <a routerLink="/account">Your account</a>
+        <b>{{userTruc.currentUser.name}}</b>
+        <button (click)="logoutClick()">Log Out</button>
+      </span>
+    </span>
+
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+      <mat-nav-list>
+        <a mat-list-item routerLink="/analytics">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Google_Analytics_2016.png">
+        </a>
+        <a mat-list-item routerLink="/adwords">Adwords</a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+
+
 
 <footer>
   <p>Made with 😎 at Ironhack</p>

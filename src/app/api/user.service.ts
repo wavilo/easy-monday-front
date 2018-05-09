@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import 'rxjs/operator/toPromise';
+import { toPromise } from './to-promise';
+import { environment } from '../../environments/environment'
 
 @Injectable()
 export class UserService {
@@ -13,9 +14,8 @@ export class UserService {
 
   // GET /checklogin
   check(){
-    return this.ajaxTruc  
-      .get('http://localhost:3000/api/checklogin', { withCredentials: true })
-      .toPromise()
+    return toPromise(this.ajaxTruc  
+      .get(`${environment.backUrl}/api/checklogin`, { withCredentials: true }))
       .then((apiResponse: any)=>{
         //set our logged in user state
         this.currentUser = apiResponse.userInfo;
@@ -25,12 +25,11 @@ export class UserService {
   }
   // POST /signup
   postSignup(creds: SignupCredentials){
-    return this.ajaxTruc
-      .post('http://localhost:3000/api/signup',
+    return toPromise(this.ajaxTruc
+      .post(`${environment.backUrl}/api/signup`,
       creds, 
       { withCredentials: true }
-    )
-      .toPromise()
+    ))
       .then((apiResponse: any)=>{
         //set our logged in user state
         this.currentUser = apiResponse.userInfo;
@@ -40,12 +39,11 @@ export class UserService {
 
   // POST /login
   postLogin(creds: LoginCredentials){
-    return this.ajaxTruc
-      .post('http://localhost:3000/api/login',
+    return toPromise(this.ajaxTruc
+      .post(`${environment.backUrl}/api/login`,
       creds, 
       { withCredentials: true }
-    )
-      .toPromise()
+    ))
       .then((apiResponse: any)=>{
         //set our logged in user state
         this.currentUser = apiResponse.userInfo;
@@ -55,9 +53,8 @@ export class UserService {
 
   // GET /logout
   logout(){
-    return this.ajaxTruc
-      .get('http://localhost:3000/api/logout', { withCredentials: true })
-      .toPromise()
+    return toPromise(this.ajaxTruc
+      .get(`${environment.backUrl}/api/logout`, { withCredentials: true }))
       .then((apiResponse: any) => {
         this.currentUser = apiResponse.userInfo;
         return apiResponse;
@@ -81,6 +78,6 @@ export class LoginCredentials {
 
 export class SignupCredentials {
   name: string;
-  emails: string;
+  email: string;
   password: string;
 }
