@@ -1,0 +1,22 @@
+<h2>Signup</h2>
+
+<form (ngSubmit)="signSubmit()">
+
+  <label>
+    Your name:
+    <input type="text" name="name" [(ngModel)]="formCreds.name" placeholder="John Doe">
+  </label>
+
+  <label>
+    Your email:
+    <input type="email" name="email" [(ngModel)]="formCreds.email" placeholder="john.doe@gmail.com">
+  </label>
+
+  <label>
+    Your password:
+    <input type="password" name="password" [(ngModel)]="formCreds.password" placeholder="******">
+  </label>
+
+  <button>Log in</button>
+
+</form>

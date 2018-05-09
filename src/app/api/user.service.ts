@@ -24,6 +24,19 @@ export class UserService {
 
   }
   // POST /signup
+  postSignup(creds: SignupCredentials){
+    return this.ajaxTruc
+      .post('http://localhost:3000/api/signup',
+      creds, 
+      { withCredentials: true }
+    )
+      .toPromise()
+      .then((apiResponse: any)=>{
+        //set our logged in user state
+        this.currentUser = apiResponse.userInfo;
+        return apiResponse;
+      });
+  }
 
   // POST /login
   postLogin(creds: LoginCredentials){
@@ -63,5 +76,11 @@ export class User {
 
 export class LoginCredentials {
   email: string;
+  password: string;
+}
+
+export class SignupCredentials {
+  name: string;
+  emails: string;
   password: string;
 }
