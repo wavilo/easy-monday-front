@@ -1,33 +1,26 @@
-<header>
-
-
-
-  <h1>Easy Monday</h1>
-  <nav>
-
-
-
-  </nav>
-</header>
-
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
   <mat-toolbar color="primary" class="example-toolbar">
     <button mat-icon-button (click)="snav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
-    <h1 class="example-app-name logo">Easy Monday</h1>
-    <span class="ber-toolbar">
-      <span *ngIf="!userTruc.currentUser">
-        <a routerLink="/signup">Signup</a>
-        <a routerLink="/login">Login</a>
-      </span>
+    <h1 class="example-app-name logo">
+      <a routerLink="/">Easy Monday</a>
+    </h1>
 
-      <span *ngIf="userTruc.currentUser">
-        <a routerLink="/">Home</a>
-        <a routerLink="/account">Your account</a>
-        <b>{{userTruc.currentUser.name}}</b>
-        <button (click)="logoutClick()">Log Out</button>
-      </span>
+    <span class="fill-right"></span>
+
+    <span *ngIf="!userTruc.currentUser">
+      <a routerLink="/signup">Signup</a>
+      <a routerLink="/login">Login</a>
+    </span>
+
+    <span *ngIf="userTruc.currentUser">
+      <a>Add a comment</a>
+      <span class="fill-center"></span>
+
+      <a routerLink="/account">{{userTruc.currentUser.name}} account</a>
+      <!-- <mat-icon svgIcon="power-off"></mat-icon> -->
+      <button mat-raised-button (click)="logoutClick()">Logout</button>
     </span>
 
   </mat-toolbar>
@@ -36,9 +29,23 @@
     <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
       <mat-nav-list>
         <a mat-list-item routerLink="/analytics">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Google_Analytics_2016.png">
+          <img src="../assets/Google-Analytics.png"> Analytics
         </a>
-        <a mat-list-item routerLink="/adwords">Adwords</a>
+        <a mat-list-item routerLink="/adwords">
+          <img src="../assets/AdWords.png"> Adwords
+        </a>
+        <a mat-list-item routerLink="/facebook">
+          <img src="../assets/facebook.png"> Facebook
+        </a>
+        <a mat-list-item routerLink="/youtube">
+          <img src="../assets/youtube.png"> Youtube
+        </a>
+        <a mat-list-item routerLink="/twitch">
+          <img src="../assets/twitch.png"> Twitch
+        </a>
+        <a mat-list-item routerLink="/tools">
+          <img src="../assets/tools_black.png"> Tools
+        </a>
       </mat-nav-list>
     </mat-sidenav>
 
@@ -46,11 +53,8 @@
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
+
+  <footer>
+    <p>Made with 😎 at Ironhack</p>
+  </footer>
 </div>
-
-
-
-
-<footer>
-  <p>Made with 😎 at Ironhack</p>
-</footer>

@@ -1,17 +1,13 @@
-<h2>Login</h2>
+<div class="container">
+  <form class="example-form" (ngSubmit)="loginSubmit()">
+    <mat-form-field class="example-full-width">
+      <input type="email" name="email" [(ngModel)]="formCreds.email" matInput placeholder="Your email" value="isaac.asimov@gmail.com">
+    </mat-form-field>
 
-<form (ngSubmit)="loginSubmit()">
+    <mat-form-field class="example-full-width">
+      <input type="password" name="password" [(ngModel)]="formCreds.password" matInput placeholder="Your password" value="****">
+    </mat-form-field>
 
-  <label>
-    Your email:
-    <input type="email" name="email" [(ngModel)]="formCreds.email" placeholder="john.doe@gmail.com">
-  </label>
-
-  <label>
-    Your password:
-    <input type="password" name="password" [(ngModel)]="formCreds.password" placeholder="******">
-  </label>
-
-  <button>Log in</button>
-
-</form>
+    <button mat-raised-button>Log In</button>
+  </form>
+</div>
