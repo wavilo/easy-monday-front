@@ -1,18 +1,25 @@
-import { UserService } from './api/user.service';
+import { UserService} from './api/user.service';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
+import { CommentService, CommentCredentials } from './api/comment.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
+
+
 export class AppComponent {
   title = 'app';
   showFiller = false;
+  panelOpenState: boolean = false;
+  formCreds: CommentCredentials = new CommentCredentials();
+
 
   //for Material Angular
   mobileQuery: MediaQueryList;
@@ -21,10 +28,11 @@ export class AppComponent {
 
   constructor(
     public userTruc: UserService,
+    public apiTruc: CommentService,
     changeDetectorRef: ChangeDetectorRef, 
     media: MediaMatcher,
     iconRegistry: MatIconRegistry, 
-    sanitizer: DomSanitizer
+    sanitizer: DomSanitizer,
   ){
     this.mobileQuery = media.matchMedia('(max-width: 2200px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
@@ -53,7 +61,19 @@ export class AppComponent {
         console.log(err);
       });
   }
+
   
+  saveComment(){
+    this.apiTruc.postComment(this.formCreds)
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((err) => {
+        console.log('Login error');
+        console.log(err);
+      });
+  }
+
   }
 
 

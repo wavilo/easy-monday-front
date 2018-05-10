@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommentService, Comment } from '../api/comment.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-account',
@@ -10,8 +11,10 @@ export class UserAccountComponent implements OnInit {
 
   comments: Comment[] = [];
 
+
   constructor(
-    public apiTruc: CommentService
+    public apiTruc: CommentService,
+
   ) { }
 
   ngOnInit() {
@@ -21,9 +24,13 @@ export class UserAccountComponent implements OnInit {
         this.comments = result;
       })
       .catch((err)=>{
-        console.log("Phone List error");
+        console.log("Comment List error");
         console.log(err);
       })
   }
+
+
+
+
 
 }

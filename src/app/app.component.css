@@ -29,7 +29,7 @@ h1.example-app-name {
 }
 
 .mat-toolbar.mat-primary {
-  background-color:#409D9B;
+  background-color:#7DC383;
 }
 
 .logo {
@@ -40,7 +40,7 @@ h1.example-app-name {
 
 
 img {
-  width: 30px;
+  height: 30px;
 }
 
 .fill-right {
@@ -53,6 +53,15 @@ img {
   text-align: center;
 }
 
+.mat-form-field-infix {
+  width: 100px
+}
 
+/* @media screen and (max-width: 600px)
+{
+  mat-form-field {
+    width: auto;
+  }
+} */
 
 

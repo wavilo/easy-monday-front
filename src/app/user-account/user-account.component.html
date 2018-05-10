@@ -1,13 +1,15 @@
-<h2>Your comments</h2>
+<h2>
+  Your weekly comments</h2>
+
 
 <ul>
-  <li *ngFor="let oneComment of comments">
-    <h3>Week: {{oneComment.week}}</h3>
-    <ul>
+  <li class="first-li" *ngFor="let oneComment of comments">
+    <h4>Week: {{oneComment.week}}</h4>
+    <ol>
       <li *ngFor="let onlyOneComment of oneComment.comment">
-        <p>w{{onlyOneComment}}</p>
+        <p>{{onlyOneComment}}</p>
       </li>
-    </ul>
-    <a [routerLink]="['/comment', oneComment._id]">Edit the comment</a>
+    </ol>
+    <button mat-button mat-raised-button color="primary" [routerLink]="['/comment', oneComment._id]">See details</button>
   </li>
 </ul>

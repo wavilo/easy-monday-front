@@ -1,0 +1,15 @@
+<div class="container">
+
+  <h4>Week: {{comment?.week}}</h4>
+  <h5>
+    <i>Created: {{comment?.createdAt}}</i>
+  </h5>
+
+  <ol>
+    <li *ngFor="let onlyOneComment of comment?.comment">
+      <p>{{onlyOneComment}}</p>
+    </li>
+  </ol>
+  <!-- <button mat-button mat-raised-button color="primary">Edit</button> -->
+  <button mat-button mat-raised-button color="warn" (click)="deleteClick()">Delete</button>
+</div>

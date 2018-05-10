@@ -6,14 +6,26 @@ import { toPromise } from './to-promise';
 
 @Injectable()
 export class CommentService {
+  currentComment: Comment
 
   constructor(
     private ajaxTruc: HttpClient
   ) { }
 
   // POST /api/comments
-
+  postComment(creds: CommentCredentials){
+    return toPromise(this.ajaxTruc
+      .post(`${environment.backUrl}/api/comments`,
+      creds, 
+      { withCredentials: true}
+    ))
+      .then((apiResponse: any) => {
+        this.currentComment =  apiResponse.commentInfo
+      })
+      ;
+  }
   
+
   // GET method for all method
   getList(){
     return toPromise(this.ajaxTruc
@@ -26,8 +38,6 @@ export class CommentService {
       .get(`${environment.backUrl}/api/comment/${commentId}`));
   }
 
-
-  // PUT method for one comment
   
   // DELETE method for one comment
   delete(commentId){
@@ -44,5 +54,10 @@ export class Comment {
   user: string;
   createdAt?: Date; //le "?" makes this property optional
   updatedAt?: Date; //le "?" makes this property optional
+}
+
+export class CommentCredentials {
+  week: number;
+  comment: string[];
 }
 

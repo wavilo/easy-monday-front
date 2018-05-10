@@ -3,24 +3,22 @@
     <button mat-icon-button (click)="snav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
-    <h1 class="example-app-name logo">
-      <a routerLink="/">Easy Monday</a>
-    </h1>
+
+    <button class="example-app-name logo" mat-button routerLink="/">Easy Monday</button>
+
 
     <span class="fill-right"></span>
 
     <span *ngIf="!userTruc.currentUser">
-      <a routerLink="/signup">Signup</a>
-      <a routerLink="/login">Login</a>
+      <button mat-button routerLink="/signup">Signup</button>
+      <button mat-button routerLink="/login">Login</button>
     </span>
 
     <span *ngIf="userTruc.currentUser">
-      <a>Add a comment</a>
-      <span class="fill-center"></span>
-
-      <a routerLink="/account">{{userTruc.currentUser.name}} account</a>
+      <!-- <button mat-button>Add a comment</button> -->
+      <button mat-button routerLink="/comments">{{userTruc.currentUser.name}} comments</button>
       <!-- <mat-icon svgIcon="power-off"></mat-icon> -->
-      <button mat-raised-button (click)="logoutClick()">Logout</button>
+      <button mat-button (click)="logoutClick()">Logout</button>
     </span>
 
   </mat-toolbar>
@@ -29,22 +27,22 @@
     <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
       <mat-nav-list>
         <a mat-list-item routerLink="/analytics">
-          <img src="../assets/Google-Analytics.png"> Analytics
+          <img src="../assets/Google-Analytics.png">
         </a>
         <a mat-list-item routerLink="/adwords">
-          <img src="../assets/AdWords.png"> Adwords
+          <img src="../assets/AdWords.png">
         </a>
         <a mat-list-item routerLink="/facebook">
-          <img src="../assets/facebook.png"> Facebook
+          <img src="../assets/facebook.png">
         </a>
         <a mat-list-item routerLink="/youtube">
-          <img src="../assets/youtube.png"> Youtube
+          <img src="../assets/youtube.png">
         </a>
         <a mat-list-item routerLink="/twitch">
-          <img src="../assets/twitch.png"> Twitch
+          <img src="../assets/twitch.png">
         </a>
         <a mat-list-item routerLink="/tools">
-          <img src="../assets/tools_black.png"> Tools
+          <img src="../assets/tools_black.png">
         </a>
       </mat-nav-list>
     </mat-sidenav>
@@ -54,7 +52,47 @@
     </mat-sidenav-content>
   </mat-sidenav-container>
 
+
+
+
+
+
   <footer>
-    <p>Made with 😎 at Ironhack</p>
+
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          ⇪ Add a Comment
+        </mat-panel-title>
+        <mat-panel-description>
+          Choose your week and comment
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <mat-form-field>
+        <input name="week" [(ngModel)]="formCreds.week" type="number" matInput placeholder="Week">
+      </mat-form-field>
+
+      <mat-form-field class="field-comment">
+        <textarea name="comment" [(ngModel)]="formCreds.comment" matInput placeholder="#1 Comment"></textarea>
+      </mat-form-field>
+      <mat-form-field class="field-comment">
+        <textarea matInput placeholder="#2 Comment"></textarea>
+      </mat-form-field>
+      <mat-form-field class="field-comment">
+        <textarea matInput placeholder="#3 Comment"></textarea>
+      </mat-form-field>
+      <mat-form-field class="field-comment">
+        <textarea matInput placeholder="#4 Comment"></textarea>
+      </mat-form-field>
+
+      <mat-action-row>
+        <button (click)="saveComment()" mat-button color="primary">Save</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+
+
   </footer>
 </div>

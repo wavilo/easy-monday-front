@@ -50,6 +50,9 @@ import {
   MatToolbarModule,
   MatTooltipModule,
   MatTreeModule, } from "@angular/material";
+import { AnalyticsComponent } from './analytics/analytics.component';
+import { CommentDetailComponent } from './comment-detail/comment-detail.component';
+import { WeekPipe } from './pipes-folder/week.pipe';
 
 
 
@@ -62,6 +65,9 @@ import {
     HomePageComponent,
     LoginComponent,
     SignupComponent,
+    AnalyticsComponent,
+    CommentDetailComponent,
+    WeekPipe,
   ],
   imports: [
     BrowserModule,
