@@ -53,6 +53,8 @@ import {
 import { AnalyticsComponent } from './analytics/analytics.component';
 import { CommentDetailComponent } from './comment-detail/comment-detail.component';
 import { WeekPipe } from './pipes-folder/week.pipe';
+import { ToolsComponent } from './tools/tools.component';
+import { YoutubeComponent } from './youtube/youtube.component';
 
 
 
@@ -68,6 +70,8 @@ import { WeekPipe } from './pipes-folder/week.pipe';
     AnalyticsComponent,
     CommentDetailComponent,
     WeekPipe,
+    ToolsComponent,
+    YoutubeComponent,
   ],
   imports: [
     BrowserModule,

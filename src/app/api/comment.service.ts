@@ -24,12 +24,12 @@ export class CommentService {
       })
       ;
   }
-  
+
 
   // GET method for all method
   getList(){
     return toPromise(this.ajaxTruc
-      .get(`${environment.backUrl}/api/comments`));
+      .get(`${environment.backUrl}/api/comments`, {withCredentials: true}));
   }
 
   // GET Method for one comment

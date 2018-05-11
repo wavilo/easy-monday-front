@@ -53,15 +53,16 @@ img {
   text-align: center;
 }
 
-.mat-form-field-infix {
-  width: 100px
+
+.field-comment {
+  width: 350px;
 }
 
-/* @media screen and (max-width: 600px)
+
+
+@media screen and (max-width: 600px)
 {
-  mat-form-field {
-    width: auto;
-  }
-} */
+
+}
 
 

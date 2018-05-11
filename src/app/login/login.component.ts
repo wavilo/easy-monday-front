@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginCredentials, UserService } from '../api/user.service';
+import { LoginCredentials, UserService, User } from '../api/user.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   formCreds: LoginCredentials = new LoginCredentials();
+  user: User
 
   constructor(
     public userTruc: UserService,
@@ -22,6 +23,10 @@ export class LoginComponent implements OnInit {
   loginSubmit(){
     this.userTruc.postLogin(this.formCreds)
       .then((result) => {
+        console.log(result);
+        
+        this.user = result;
+        console.log(this.user);
         this.resTruc.navigateByUrl('/');
       })
       .catch((err) => {

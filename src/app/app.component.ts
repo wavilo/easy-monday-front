@@ -67,6 +67,7 @@ export class AppComponent {
     this.apiTruc.postComment(this.formCreds)
       .then((result) => {
         console.log(result);
+        this.formCreds.comment = null;
       })
       .catch((err) => {
         console.log('Login error');

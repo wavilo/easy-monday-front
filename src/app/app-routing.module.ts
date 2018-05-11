@@ -7,6 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { AnalyticsComponent } from './analytics/analytics.component';
 import { CommentDetailComponent } from './comment-detail/comment-detail.component';
+import { ToolsComponent } from './tools/tools.component';
+import { YoutubeComponent } from './youtube/youtube.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent},
@@ -15,6 +17,8 @@ const routes: Routes = [
   { path: "signup", component: SignupComponent},
   { path: "login", component: LoginComponent },
   { path: "analytics", component: AnalyticsComponent},
+  { path: "youtube", component: YoutubeComponent},
+  { path: "tools", component: ToolsComponent},
 
   { path: '**', component: NotFoundComponent}
 ];
