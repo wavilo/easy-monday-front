@@ -23,7 +23,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/analytics.js"
+            ]
           },
           "configurations": {
             "production": {

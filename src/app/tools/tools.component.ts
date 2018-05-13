@@ -23,8 +23,8 @@ export class ToolsComponent implements OnInit {
   }
  
   calcTable(){
-    console.log(this.budget);
-    console.log(this.impression);
+    // console.log(this.budget);
+    // console.log(this.impression);
     this.cpm = (this.budget / this.impression * 1000) + " €";
     this.ctr = 0.002;
     this.clicks = this.impression * this.ctr;

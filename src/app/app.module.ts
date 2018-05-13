@@ -55,6 +55,7 @@ import { CommentDetailComponent } from './comment-detail/comment-detail.componen
 import { WeekPipe } from './pipes-folder/week.pipe';
 import { ToolsComponent } from './tools/tools.component';
 import { YoutubeComponent } from './youtube/youtube.component';
+import { YoutubeService } from './api/youtube.service';
 
 
 
@@ -117,7 +118,8 @@ import { YoutubeComponent } from './youtube/youtube.component';
   ],
   providers: [
     CommentService,
-    UserService
+    UserService, 
+    YoutubeService,
   ],
   bootstrap: [AppComponent]
 })
