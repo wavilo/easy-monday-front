@@ -13,16 +13,17 @@ export class YoutubeService {
 
 
 
-  getYtStats(){
-    const idVideo: string = "KVacgZ7mPHE";
+  getYtStats(id){
     return this.ajaxTruc
-      .get(`https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${idVideo}&key=${environment.youtubeKeyId}`)
+      .get(`https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${id}&key=AIzaSyA1FJ3KpKtRkAEVL-twLgfUpCi_tWaApLw`)
       .toPromise();
   }
 
-  getLastYtVideos(){
+  getLastYtVideos(publishedAfter: Date, publishedBefore: Date, query){
+    const afterStr = publishedAfter.toISOString();
+    const beforStr =  publishedBefore.toISOString();
     return this.ajaxTruc
-      .get(`https://www.googleapis.com/youtube/v3/search?part=snippet&publishedAfter=2018-05-05T00%3A00%3A00Z&publishedBefore=2018-05-12T00%3A00%3A00Z&q=overwatch&regionCode=fr&key=${environment.youtubeKeyId}`)
+      .get(`https://www.googleapis.com/youtube/v3/search?part=snippet&publishedAfter=${afterStr}&publishedBefore=${beforStr}&q=${query}&regionCode=fr&key=AIzaSyA1FJ3KpKtRkAEVL-twLgfUpCi_tWaApLw`)
       .toPromise();
   }
   
@@ -43,9 +44,7 @@ export class YoutubeSnippetFromApi {
   title: string;
 }
 
-export class YoutubeIdVideo {
-  idVideo: string;
-}
+
 
 export class YoutubeListVideos {
   videoId: string;

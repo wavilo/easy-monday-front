@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { YoutubeService, YoutubeStatsFromApi, YoutubeSnippetFromApi, YoutubeIdVideo, YoutubeListVideos } from '../api/youtube.service';
+import { YoutubeService, YoutubeStatsFromApi, YoutubeSnippetFromApi, YoutubeListVideos } from '../api/youtube.service';
+
+
 
 
 @Component({
@@ -9,27 +11,49 @@ import { YoutubeService, YoutubeStatsFromApi, YoutubeSnippetFromApi, YoutubeIdVi
 })
 export class YoutubeComponent implements OnInit {
 
-  formCreds: YoutubeIdVideo = new YoutubeIdVideo();
-  youtubeVideosList: Array<YoutubeListVideos> = [];
+
+
+  publishedAfter: Date;
+  publishedBefore: Date;
+  query: string = "";
+  //after: 2018-05-05T00%3A00%3A00Z
+  //before: 2018-05-12T00%3A00%3A00Z
+
+  //The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
+
+  youtubeVideosList: Array<YoutubeListVideos> ;
+
+  classState: any = {
+    hidden: true,
+    show: false,
+  }
 
   constructor(
     public youtubeVideos: YoutubeService,
   ) { }
 
   ngOnInit() {
-    this.getYoutubeList();
   }
 
 
   getYoutubeList(){
-    this.youtubeVideos.getLastYtVideos()
+    this.youtubeVideos.getLastYtVideos(this.publishedAfter, this.publishedBefore, this.query)
       .then((resultVideos: any) => {
-        console.log(resultVideos);
-        this.youtubeVideosList.push(resultVideos.items[0].snippet);
+        this.youtubeVideosList = resultVideos;
+        console.log(this.youtubeVideosList);
+        this.changeClass();
       })
       .catch((err) =>{
         console.log('Youtube Stats Error', err)
       });
+
+
   }
+
+  changeClass(){
+    this.classState.hidden = false;
+    this.classState.show = true;
+  }
+
 
 }

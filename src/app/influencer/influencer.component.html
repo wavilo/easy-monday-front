@@ -1,13 +1,18 @@
 <h3>Get the Stats from a youtube video</h3>
+<p>The video ID is visible at the end of the URL - for instance https://www.youtube.com/watch?v=
+  <b>oT8u2Qy78ag</b>
+</p>
 
 <div class="container input-id">
-  <form class="example-form" (ngSubmit)="signSubmit()">
+  <form class="example-form">
     <mat-form-field class="example-full-width">
       <input type="text" name="idVideo" [(ngModel)]="idVideo" matInput placeholder="Video ID">
     </mat-form-field>
 
-    <button (click)="getYoutubeStats()" mat-raised-button color="primary">Get Me the Stats !</button>
   </form>
+
+  <button (click)="getYoutubeStats()" mat-raised-button color="primary">Get Me the Stats !</button>
+
 </div>
 
 <!-- [(ngModel)]="formCreds.name" -->
@@ -26,8 +31,8 @@
         <tbody>
           <tr *ngFor="let oneYtSnippet of youtubeVidSnippet">
             <td>{{oneYtSnippet.channelTitle}}</td>
-            <td>{{oneYtSnippet.title}}</td>
-            <td>{{oneYtSnippet.publishedAt}}</td>
+            <td>{{oneYtSnippet.title | slice:0:35}}</td>
+            <td>{{oneYtSnippet.publishedAt | date:'MM-dd-yyyy'}}</td>
           </tr>
         </tbody>
       </table>
@@ -53,4 +58,5 @@
       </table>
     </div>
   </div>
+  <button>Save it</button>
 </div>

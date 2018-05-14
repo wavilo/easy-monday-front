@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { YoutubeService, YoutubeStatsFromApi, YoutubeSnippetFromApi, YoutubeIdVideo, YoutubeListVideos } from '../api/youtube.service';
+import { YoutubeService, YoutubeStatsFromApi, YoutubeSnippetFromApi } from '../api/youtube.service';
 
 
 @Component({
@@ -11,9 +11,8 @@ export class InfluencerComponent implements OnInit {
 
   youtubeVidStats: Array<YoutubeStatsFromApi> = [];
   youtubeVidSnippet: Array<YoutubeSnippetFromApi> = [];
-  formCreds: YoutubeIdVideo = new YoutubeIdVideo();
-  youtubeVideosList: Array<YoutubeListVideos> = [];
-
+  idVideo: string;
+  
   constructor(
     public youtubeStats: YoutubeService,
     public youtubeSnippet: YoutubeService,
@@ -25,7 +24,7 @@ export class InfluencerComponent implements OnInit {
   }
 
   getYoutubeStats(){
-    this.youtubeStats.getYtStats()
+    this.youtubeStats.getYtStats(this.idVideo)
       .then((result:any) => {
 
         this.youtubeVidStats.push(result.items[0].statistics);

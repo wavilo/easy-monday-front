@@ -6,8 +6,6 @@
 export const environment = {
   production: false,
   backUrl: 'http://localhost:3000',
-  youtubeKeyId: "AIzaSyA1FJ3KpKtRkAEVL-twLgfUpCi_tWaApLw",
-
 };
 
 
