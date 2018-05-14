@@ -56,6 +56,7 @@ import { WeekPipe } from './pipes-folder/week.pipe';
 import { ToolsComponent } from './tools/tools.component';
 import { YoutubeComponent } from './youtube/youtube.component';
 import { YoutubeService } from './api/youtube.service';
+import { InfluencerComponent } from './influencer/influencer.component';
 
 
 
@@ -73,6 +74,7 @@ import { YoutubeService } from './api/youtube.service';
     WeekPipe,
     ToolsComponent,
     YoutubeComponent,
+    InfluencerComponent,
   ],
   imports: [
     BrowserModule,

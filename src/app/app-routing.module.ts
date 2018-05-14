@@ -9,6 +9,7 @@ import { AnalyticsComponent } from './analytics/analytics.component';
 import { CommentDetailComponent } from './comment-detail/comment-detail.component';
 import { ToolsComponent } from './tools/tools.component';
 import { YoutubeComponent } from './youtube/youtube.component';
+import { InfluencerComponent } from './influencer/influencer.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: "analytics", component: AnalyticsComponent},
   { path: "youtube", component: YoutubeComponent},
   { path: "tools", component: ToolsComponent},
+  { path: "influencer", component: InfluencerComponent},
 
   { path: '**', component: NotFoundComponent}
 ];

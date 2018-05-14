@@ -15,10 +15,10 @@
     </span>
 
     <span *ngIf="userTruc.currentUser">
-      <!-- <button mat-button>Add a comment</button> -->
       <button mat-button routerLink="/comments">{{userTruc.currentUser.name}} comments</button>
-      <!-- <mat-icon svgIcon="power-off"></mat-icon> -->
-      <button mat-button (click)="logoutClick()">Logout</button>
+      <button mat-button (click)="logoutClick()">
+        <mat-icon svgIcon="power-off"></mat-icon>
+      </button>
     </span>
 
   </mat-toolbar>
@@ -32,8 +32,8 @@
         <a mat-list-item routerLink="/adwords">
           <img src="../assets/AdWords.png">
         </a>
-        <a mat-list-item routerLink="/facebook">
-          <img src="../assets/facebook.png">
+        <a mat-list-item routerLink="/influencer">
+          <img src="../assets/influencer.svg">
         </a>
         <a mat-list-item routerLink="/youtube">
           <img src="../assets/youtube.png">

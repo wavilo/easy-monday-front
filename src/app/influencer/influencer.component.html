@@ -1,0 +1,56 @@
+<h3>Get the Stats from a youtube video</h3>
+
+<div class="container input-id">
+  <form class="example-form" (ngSubmit)="signSubmit()">
+    <mat-form-field class="example-full-width">
+      <input type="text" name="idVideo" [(ngModel)]="idVideo" matInput placeholder="Video ID">
+    </mat-form-field>
+
+    <button (click)="getYoutubeStats()" mat-raised-button color="primary">Get Me the Stats !</button>
+  </form>
+</div>
+
+<!-- [(ngModel)]="formCreds.name" -->
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm">
+      <table class="table table-hover ">
+        <thead>
+          <tr>
+            <th scope="col">Name of Channel</th>
+            <th scope="col">Name of the video</th>
+            <th scope="col">Date of publication</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let oneYtSnippet of youtubeVidSnippet">
+            <td>{{oneYtSnippet.channelTitle}}</td>
+            <td>{{oneYtSnippet.title}}</td>
+            <td>{{oneYtSnippet.publishedAt}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-sm">
+      <table class="table table-hover ">
+        <thead>
+          <tr>
+            <th scope="col">Views</th>
+            <th scope="col">Likes</th>
+            <th scope="col">Dislikes</th>
+            <th scope="col">Comments</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let oneYtStats of youtubeVidStats">
+            <td>{{oneYtStats.viewCount}}</td>
+            <td>{{oneYtStats.likeCount}}</td>
+            <td>{{oneYtStats.dislikeCount}}</td>
+            <td>{{oneYtStats.commentCount}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
