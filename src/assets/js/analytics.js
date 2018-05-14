@@ -1,18 +1,18 @@
 console.log("hello");
 
-(function(w,d,s,g,js,fs){
-  g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(f){this.q.push(f);}};
-  js=d.createElement(s);fs=d.getElementsByTagName(s)[0];
-  js.src='https://apis.google.com/js/platform.js';
-  fs.parentNode.insertBefore(js,fs);js.onload=function(){g.load('analytics');};
-}(window,document,'script'));
+(function (w, d, s, g, js, fs) {
+  g = w.gapi || (w.gapi = {}); g.analytics = { q: [], ready: function (f) { this.q.push(f); } };
+  js = d.createElement(s); fs = d.getElementsByTagName(s)[0];
+  js.src = 'https://apis.google.com/js/platform.js';
+  fs.parentNode.insertBefore(js, fs); js.onload = function () { g.load('analytics'); };
+}(window, document, 'script'));
 
 
 
-gapi.analytics.ready(function() {
+gapi.analytics.ready(function () {
 
-  console.log("hello");
-  
+
+
   /**
    * Authorize the user immediately if the user has already granted access.
    * If no access has been created, render an authorize button inside the
@@ -56,12 +56,11 @@ gapi.analytics.ready(function() {
     }
   });
 
-
   /**
    * Render the dataChart on the page whenever a new view is selected.
    */
-  viewSelector.on('change', function(ids) {
-    dataChart.set({query: {ids: ids}}).execute();
+  viewSelector.on('change', function (ids) {
+    dataChart.set({ query: { ids: ids } }).execute();
   });
 
 });
