@@ -10,6 +10,8 @@ import { CommentDetailComponent } from './comment-detail/comment-detail.componen
 import { ToolsComponent } from './tools/tools.component';
 import { YoutubeComponent } from './youtube/youtube.component';
 import { InfluencerComponent } from './influencer/influencer.component';
+import { TwitchComponent } from './twitch/twitch.component';
+import { AdwordsComponent } from './adwords/adwords.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent},
@@ -17,10 +19,12 @@ const routes: Routes = [
   { path: 'comment/:blahId', component: CommentDetailComponent},
   { path: "signup", component: SignupComponent},
   { path: "login", component: LoginComponent },
-  { path: "analytics", component: AnalyticsComponent},
-  { path: "youtube", component: YoutubeComponent},
-  { path: "tools", component: ToolsComponent},
-  { path: "influencer", component: InfluencerComponent},
+  { path: "analytics", component: AnalyticsComponent },
+  { path: "youtube", component: YoutubeComponent },
+  { path: "tools", component: ToolsComponent },
+  { path: "influencer", component: InfluencerComponent },
+  { path: "twitch", component: TwitchComponent },
+  { path: "adwords", component: AdwordsComponent },
 
   { path: '**', component: NotFoundComponent}
 ];

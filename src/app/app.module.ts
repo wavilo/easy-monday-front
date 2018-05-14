@@ -57,6 +57,8 @@ import { ToolsComponent } from './tools/tools.component';
 import { YoutubeComponent } from './youtube/youtube.component';
 import { YoutubeService } from './api/youtube.service';
 import { InfluencerComponent } from './influencer/influencer.component';
+import { TwitchComponent } from './twitch/twitch.component';
+import { AdwordsComponent } from './adwords/adwords.component';
 
 
 
@@ -75,6 +77,8 @@ import { InfluencerComponent } from './influencer/influencer.component';
     ToolsComponent,
     YoutubeComponent,
     InfluencerComponent,
+    TwitchComponent,
+    AdwordsComponent,
   ],
   imports: [
     BrowserModule,
