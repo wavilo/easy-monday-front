@@ -24,7 +24,7 @@
               "src/styles.css"
             ],
             "scripts": [
-              "src/assets/js/analytics.js"
+              
             ]
           },
           "configurations": {

@@ -1,3 +1,5 @@
+console.log("hello");
+
 (function(w,d,s,g,js,fs){
   g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(f){this.q.push(f);}};
   js=d.createElement(s);fs=d.getElementsByTagName(s)[0];
@@ -9,6 +11,8 @@
 
 gapi.analytics.ready(function() {
 
+  console.log("hello");
+  
   /**
    * Authorize the user immediately if the user has already granted access.
    * If no access has been created, render an authorize button inside the
@@ -16,9 +20,8 @@ gapi.analytics.ready(function() {
    */
   gapi.analytics.auth.authorize({
     container: 'embed-api-auth-container',
-    clientid: ''
+    clientid: '759238990855-igjcd55mdvrui12ot1dru4v0saksb3uf.apps.googleusercontent.com'
   });
-
 
   /**
    * Create a new ViewSelector instance to be rendered inside of an
@@ -41,7 +44,7 @@ gapi.analytics.ready(function() {
     query: {
       metrics: 'ga:sessions',
       dimensions: 'ga:date',
-      'start-date': '7daysAgo',
+      'start-date': '30daysAgo',
       'end-date': 'yesterday'
     },
     chart: {
