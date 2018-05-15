@@ -33,6 +33,7 @@ export class YoutubeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.getYoutubeList()
   }
 
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TwitchService, TwitchTopList } from '../api/twitch.service';
 
 @Component({
   selector: 'app-twitch',
@@ -7,9 +8,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TwitchComponent implements OnInit {
 
-  constructor() { }
+  gameQuery: string = "";
+  twitchVideosList: Array<TwitchTopList>
+  twitchFullList: Array<TwitchTopList>
+  
+  constructor(
+    public twitchVideos: TwitchService,
+  ) { }
 
   ngOnInit() {
+    //this.getTwitchList()
+    this.getFullTwitchList()
+  }
+
+
+  getFullTwitchList() {
+    this.twitchVideos.getFullTopList()
+    .then((resultVideos: any) => {
+      this.twitchFullList = resultVideos.top;
+      console.log(this.twitchFullList);
+    })
+    .catch((err) =>{
+      console.log('Twitch List Error', err)
+    });
+  }
+
+  searchTwitch(){
+    
   }
 
 }
+

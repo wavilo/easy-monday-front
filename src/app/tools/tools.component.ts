@@ -9,7 +9,7 @@ export class ToolsComponent implements OnInit {
 
   budget: number;
   impression: number;
-  cpm: string;
+  cpm: number;
   ctr: number;
   clicks: number
   cpc: number;
@@ -23,13 +23,11 @@ export class ToolsComponent implements OnInit {
   }
  
   calcTable(){
-    // console.log(this.budget);
-    // console.log(this.impression);
-    this.cpm = (this.budget / this.impression * 1000) + " €";
-    this.ctr = 0.002;
+    this.cpm = (this.budget / this.impression * 1000);
+    this.ctr = this.clicks / this.impression;
     this.clicks = this.impression * this.ctr;
     this.cpc = this.budget / this.clicks;
-    this.cr = 0.002;
+    this.cr = this.regs / this.clicks;
     this.regs = this.clicks * this.cr;
     this.cpa = this.budget / this.regs;
 

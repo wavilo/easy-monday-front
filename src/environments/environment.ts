@@ -6,6 +6,8 @@
 export const environment = {
   production: false,
   backUrl: 'http://localhost:3000',
+  youtube_key: "AIzaSyA1FJ3KpKtRkAEVL-twLgfUpCi_tWaApLw",
+  twitch_key: "p1jklfx2tgezw6r2kosv3i9uwu4nlw",
 };
 
 

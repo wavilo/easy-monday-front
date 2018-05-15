@@ -40,6 +40,9 @@ export class AppComponent {
     iconRegistry.addSvgIcon(
       'power-off',
       sanitizer.bypassSecurityTrustResourceUrl('../assets/baseline-power_settings_new-24px.svg'));
+      iconRegistry.addSvgIcon(
+        'user',
+        sanitizer.bypassSecurityTrustResourceUrl('../assets/baseline-account_circle-24px.svg'));
   }
 
   ngOnDestroy(): void {

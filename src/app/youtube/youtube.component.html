@@ -31,65 +31,102 @@
 <hr>
 
 
-<div class="container result" [ngClass]="classState">
+<div class="container result">
   <p>During this period there were
-    <b>{{youtubeVideosList?.pageInfo.totalResults}}</b> videos about {{query}}</p>
+    <b>{{youtubeVideosList?.pageInfo.totalResults}}</b> videos about
+    <b>{{query}}</b>. Here are a sample of top 5 videos:
+  </p>
 
-  <ul>
-    <li>
-      <p>Title of the video: {{youtubeVideosList?.items[0].snippet.title}}</p>
-      <img src="{{youtubeVideosList?.items[0].snippet.thumbnails.high.url}}">
-      <p>Publication date: {{youtubeVideosList?.items[0].snippet.publishedAt | date:'MM-dd-yyyy'}}</p>
-      <p>Channel title: {{youtubeVideosList?.items[0].snippet.channelTitle}}</p>
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title>{{youtubeVideosList?.items[0].snippet.title}}</mat-card-title>
+      <mat-card-subtitle>from {{youtubeVideosList?.items[0].snippet.channelTitle}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{youtubeVideosList?.items[0].snippet.thumbnails.high.url}}">
+    <mat-card-content>
+      <p>
+        {{youtubeVideosList?.items[0].snippet.description}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
       <a href="https://www.youtube.com/watch?v={{youtubeVideosList?.items[0].id.videoId}}" target="_blank">
         <button mat-button mat-raised-button color="primary">Go see the video</button>
       </a>
+    </mat-card-actions>
+  </mat-card>
 
-    </li>
-  </ul>
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title>{{youtubeVideosList?.items[1].snippet.title}}</mat-card-title>
+      <mat-card-subtitle>from {{youtubeVideosList?.items[1].snippet.channelTitle}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{youtubeVideosList?.items[1].snippet.thumbnails.high.url}}">
+    <mat-card-content>
+      <p>
+        {{youtubeVideosList?.items[1].snippet.description}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <a href="https://www.youtube.com/watch?v={{youtubeVideosList?.items[1].id.videoId}}" target="_blank">
+        <button mat-button mat-raised-button color="primary">Go see the video</button>
+      </a>
+    </mat-card-actions>
+  </mat-card>
 
-  <ul>
-    <li>
-      <p>{{youtubeVideosList?.items[1].snippet.title}}</p>
-      <img src="{{youtubeVideosList?.items[1].snippet.thumbnails.high.url}}">
-      <p>{{youtubeVideosList?.items[1].snippet.publishedAt}}</p>
-      <p>{{youtubeVideosList?.items[1].snippet.channelTitle}}</p>
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title>{{youtubeVideosList?.items[2].snippet.title}}</mat-card-title>
+      <mat-card-subtitle>from {{youtubeVideosList?.items[2].snippet.channelTitle}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{youtubeVideosList?.items[2].snippet.thumbnails.high.url}}">
+    <mat-card-content>
+      <p>
+        {{youtubeVideosList?.items[2].snippet.description}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <a href="https://www.youtube.com/watch?v={{youtubeVideosList?.items[2].id.videoId}}" target="_blank">
+        <button mat-button mat-raised-button color="primary">Go see the video</button>
+      </a>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title>{{youtubeVideosList?.items[3].snippet.title}}</mat-card-title>
+      <mat-card-subtitle>from {{youtubeVideosList?.items[3].snippet.channelTitle}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{youtubeVideosList?.items[3].snippet.thumbnails.high.url}}">
+    <mat-card-content>
+      <p>
+        {{youtubeVideosList?.items[3].snippet.description}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <a href="https://www.youtube.com/watch?v={{youtubeVideosList?.items[3].id.videoId}}" target="_blank">
+        <button mat-button mat-raised-button color="primary">Go see the video</button>
+      </a>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title>{{youtubeVideosList?.items[4].snippet.title}}</mat-card-title>
+      <mat-card-subtitle>from {{youtubeVideosList?.items[4].snippet.channelTitle}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{youtubeVideosList?.items[4].snippet.thumbnails.high.url}}">
+    <mat-card-content>
+      <p>
+        {{youtubeVideosList?.items[4].snippet.description}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <a href="https://www.youtube.com/watch?v={{youtubeVideosList?.items[4].id.videoId}}" target="_blank">
+        <button mat-button mat-raised-button color="primary">Go see the video</button>
+      </a>
+    </mat-card-actions>
+  </mat-card>
 
 
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <p>{{youtubeVideosList?.items[2].snippet.title}}</p>
-      <img src="{{youtubeVideosList?.items[2].snippet.thumbnails.high.url}}">
-      <p>{{youtubeVideosList?.items[2].snippet.publishedAt}}</p>
-      <p>{{youtubeVideosList?.items[2].snippet.channelTitle}}</p>
-
-
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <p>{{youtubeVideosList?.items[3].snippet.title}}</p>
-      <img src="{{youtubeVideosList?.items[3].snippet.thumbnails.high.url}}">
-      <p>{{youtubeVideosList?.items[3].snippet.publishedAt}}</p>
-      <p>{{youtubeVideosList?.items[3].snippet.channelTitle}}</p>
-
-
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <p>{{youtubeVideosList?.items[4].snippet.title}}</p>
-      <img src="{{youtubeVideosList?.items[4].snippet.thumbnails.high.url}}">
-      <p>{{youtubeVideosList?.items[4].snippet.publishedAt}}</p>
-      <p>{{youtubeVideosList?.items[4].snippet.channelTitle}}</p>
-
-
-    </li>
-  </ul>
 
 </div>

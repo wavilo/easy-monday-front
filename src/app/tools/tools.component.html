@@ -22,23 +22,27 @@
       <tr>
         <td>
           <input type="number" class="form-control mb-2 budget" (change)="calcTable()" [(ngModel)]="budget" id="inlineFormInput" placeholder="Ex:1000"
-            name=budget>
+            name="budget">
         </td>
         <td>
           <input type="number" class="form-control mb-2 impression" (change)="calcTable()" [(ngModel)]="impression" id="inlineFormInput"
-            placeholder="Ex:100000" name=impression>
+            placeholder="Ex:100000" name="impression">
         </td>
         <td class="cpm">{{cpm}}</td>
 
-        <td>0.2%</td>
+        <td>
+          <input type="number" class="form-control mb-2 ctr" (change)="calcTable()" [(ngModel)]="ctr" id="inlineFormInput" placeholder="Ex:0.4%"
+            name="ctr">
+        </td>
         <td class="clicks">{{clicks}}</td>
         <td class="cpc">{{cpc}}</td>
-        <td>2%</td>
+        <td>
+          <input type="number" class="form-control mb-2 impression" (change)="calcTable()" [(ngModel)]="cr" id="inlineFormInput" placeholder="Ex:0.02"
+            name="cr">
+        </td>
         <td class="regs">{{regs}}</td>
         <td class="cpa">{{cpa}}</td>
-        <!-- <td class="percAreg">20%</td>
-        <td class="aReg">0</td>
-        <td class="aCPA">0</td> -->
+
       </tr>
     </tbody>
   </table>

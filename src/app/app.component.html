@@ -15,7 +15,9 @@
     </span>
 
     <span *ngIf="userTruc.currentUser">
-      <button mat-button routerLink="/comments">{{userTruc.currentUser.name}} comments</button>
+      <button mat-button routerLink="/comments">
+        <mat-icon svgIcon="user"></mat-icon>
+      </button>
       <button mat-button (click)="logoutClick()">
         <mat-icon svgIcon="power-off"></mat-icon>
       </button>
@@ -56,30 +58,31 @@
 
 
 
-
-  <footer>
-    <p *ngIf="!userTruc.currentUser">Please SignUp to be able to add and store a comment</p>
-
-
-    <mat-expansion-panel *ngIf="userTruc.currentUser">
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          ⇪ Add a Comment
-        </mat-panel-title>
-        <mat-panel-description>
-          Choose your week and comment
-        </mat-panel-description>
-      </mat-expansion-panel-header>
+  <div class="footer">
+    <footer>
+      <p *ngIf="!userTruc.currentUser">Please SignUp to be able to add and store a comment</p>
 
 
-      <mat-form-field>
-        <input name="week" [(ngModel)]="formCreds.week" type="number" matInput placeholder="Week">
-      </mat-form-field>
+      <mat-expansion-panel *ngIf="userTruc.currentUser">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            ⇪ Add a Comment
+          </mat-panel-title>
+          <mat-panel-description>
+            Choose your week and comment
+            <mat-icon class="icon-panel" svgIcon="user"></mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
 
-      <mat-form-field class="field-comment">
-        <textarea cols="500" name="comment" [(ngModel)]="formCreds.comment" matInput placeholder="Comment"></textarea>
-      </mat-form-field>
-      <!-- <mat-form-field class="field-comment">
+
+        <mat-form-field>
+          <input name="week" [(ngModel)]="formCreds.week" type="number" matInput placeholder="Week">
+        </mat-form-field>
+
+        <mat-form-field class="field-comment">
+          <textarea cols="500" name="comment" [(ngModel)]="formCreds.comment" matInput placeholder="Comment"></textarea>
+        </mat-form-field>
+        <!-- <mat-form-field class="field-comment">
         <textarea matInput placeholder="#2 Comment"></textarea>
       </mat-form-field>
       <mat-form-field class="field-comment">
@@ -89,13 +92,14 @@
         <textarea matInput placeholder="#4 Comment"></textarea>
       </mat-form-field> -->
 
-      <mat-action-row>
-        <button (click)="saveComment()" mat-button color="primary">Save</button>
-      </mat-action-row>
-    </mat-expansion-panel>
+        <mat-action-row>
+          <button (click)="saveComment()" mat-button color="primary">Save</button>
+        </mat-action-row>
+      </mat-expansion-panel>
 
 
 
 
-  </footer>
+    </footer>
+  </div>
 </div>

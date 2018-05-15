@@ -59,6 +59,7 @@ import { YoutubeService } from './api/youtube.service';
 import { InfluencerComponent } from './influencer/influencer.component';
 import { TwitchComponent } from './twitch/twitch.component';
 import { AdwordsComponent } from './adwords/adwords.component';
+import { TwitchService } from './api/twitch.service';
 
 
 
@@ -126,6 +127,7 @@ import { AdwordsComponent } from './adwords/adwords.component';
     CommentService,
     UserService, 
     YoutubeService,
+    TwitchService,
   ],
   bootstrap: [AppComponent]
 })
