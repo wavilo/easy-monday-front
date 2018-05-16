@@ -15,7 +15,7 @@ export class YoutubeService {
 
   getYtStats(id){
     return this.ajaxTruc
-      .get(`https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${id}&key=${environment.youtube_key}`)
+      .get(`https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${id}&key=AIzaSyA1FJ3KpKtRkAEVL-twLgfUpCi_tWaApLw`)
       .toPromise();
   }
 
@@ -25,12 +25,13 @@ export class YoutubeService {
     const beforStr =  publishedBefore.toISOString();
     console.log("date" + beforStr);
     return this.ajaxTruc
-      .get(`https://www.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&publishedAfter=${afterStr}&publishedBefore=${beforStr}&q=${query}&maxResults=50&regionCode=FR&relevanceLanguage=fr&key=${environment.youtube_key}`)
+      .get(`https://www.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&publishedAfter=${afterStr}&publishedBefore=${beforStr}&q=${query}&maxResults=50&regionCode=FR&relevanceLanguage=fr&key=AIzaSyA1FJ3KpKtRkAEVL-twLgfUpCi_tWaApLw`)
       .toPromise();
   }
   
   
 }
+
 
 
 export class YoutubeStatsFromApi {
@@ -55,7 +56,7 @@ export class YoutubeListVideos {
   title: string;
   description: string;
   url: string;
-  pageInfo?: string;
+  pageInfo: string;
   items?: string;
 }
 

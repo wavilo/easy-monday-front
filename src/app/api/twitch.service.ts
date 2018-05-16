@@ -14,7 +14,7 @@ export class TwitchService {
 
   getFullTopList(){
     return this.ajaxTruc
-      .get(`https://api.twitch.tv/kraken/games/top?limit=100&period=week&client_id=${environment.twitch_key}`)
+      .get(`https://api.twitch.tv/kraken/games/top?limit=100&period=week&client_id=p1jklfx2tgezw6r2kosv3i9uwu4nlw`)
       .toPromise()
   }
 

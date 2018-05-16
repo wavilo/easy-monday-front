@@ -22,7 +22,7 @@ export class YoutubeComponent implements OnInit {
   //The value is specified in ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ) format.
 
   youtubeVideosList: Array<YoutubeListVideos> ;
-  youtubeVideoNumber: Array<YoutubeListVideos>;
+  youtubeVideoNumber: number;
 
   classState: any = {
     hidden: true,
@@ -42,8 +42,8 @@ export class YoutubeComponent implements OnInit {
     this.youtubeVideos.getLastYtVideos(this.publishedAfter, this.publishedBefore, this.query)
       .then((resultVideos: any) => {
         this.youtubeVideosList = resultVideos.items;
-        this.youtubeVideoNumber = resultVideos;
-        console.log(this.youtubeVideosList);
+        this.youtubeVideoNumber = resultVideos.pageInfo.totalResults;
+        // console.log(this.youtubeVideosList);
         this.changeClass();
       })
       .catch((err) =>{

@@ -1,7 +1,8 @@
 <div class="container">
   <h2>Google Analytics</h2>
   <p>This component can retrieve the stats from your Google Analytics account</p>
-  <button mat-button id="ga-refresh">Load GA </button>
+
+  <button (click)="clickRefresh()" mat-button mat-raised-button color="primary" id="ga-refresh">Get me the Stats</button>
 
 
   <div id="embed-api-auth-container"></div>

@@ -16,7 +16,9 @@ export class AnalyticsComponent implements OnInit {
   ngOnInit() {
   }
 
-
+  clickRefresh(){
+    window.location.reload();
+  }
 
 }
 
