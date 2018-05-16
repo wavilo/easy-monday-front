@@ -22,13 +22,13 @@ export class TwitchService {
 
 
 export class TwitchTopList {
-  title: string;
+  name: string;
   description: string;
   language: string;
   views: number;
   published_at: Date;
   url: string;
-  game: string;
+  game: any;
   preview: string;
   displayName: string;
 }

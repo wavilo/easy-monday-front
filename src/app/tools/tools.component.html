@@ -1,9 +1,9 @@
 <div class="container ber-table">
-  <h1>Table for Media scenario</h1>
+  <h2>Media Plan Table</h2>
+  <p>This component can help you created easy table for potential campaigns</p>
   <table class="table table-hover table-bordered">
     <thead>
       <tr>
-        <!-- <th scope="col">Scenario</th> -->
         <th scope="col">Budget</th>
         <th scope="col">Impressions</th>
         <th scope="col">CPM</th>
@@ -13,39 +13,36 @@
         <th scope="col">CR</th>
         <th scope="col">Regs</th>
         <th scope="col">CPA</th>
-        <!-- <th scope="col">%aRegs</th>
-        <th scope="col">aRegs</th>
-        <th scope="col">aCPA</th> -->
       </tr>
     </thead>
-    <tbody>
+    <tbody *ngFor="let data of datas; let i = index">
       <tr>
         <td>
-          <input type="number" class="form-control mb-2 budget" (change)="calcTable()" [(ngModel)]="budget" id="inlineFormInput" placeholder="Ex:1000"
-            name="budget">
+          <input type="number" class="form-control mb-2 budget" (change)="calcTable(i)" [(ngModel)]="datas[i].budget" id="inlineFormInput"
+            placeholder="Ex:1000" name="budget">
         </td>
         <td>
-          <input type="number" class="form-control mb-2 impression" (change)="calcTable()" [(ngModel)]="impression" id="inlineFormInput"
+          <input type="number" class="form-control mb-2 impression" (change)="calcTable(i)" [(ngModel)]="datas[i].impression" id="inlineFormInput"
             placeholder="Ex:100000" name="impression">
         </td>
-        <td class="cpm">{{cpm}}</td>
+        <td class="cpm">{{data.cpm | currency:'$':'code'}}</td>
 
         <td>
-          <input type="number" class="form-control mb-2 ctr" (change)="calcTable()" [(ngModel)]="ctr" id="inlineFormInput" placeholder="Ex:0.4%"
-            name="ctr">
+          <input type="number" class="form-control mb-2 ctr" (change)="calcTable(i)" [(ngModel)]="datas[i].ctr" id="inlineFormInput"
+            placeholder="Ex:0.004" name="ctr">
         </td>
-        <td class="clicks">{{clicks}}</td>
-        <td class="cpc">{{cpc}}</td>
+        <td class="clicks">{{data.clicks | number}}</td>
+        <td class="cpc">{{data.cpc | currency:'$':'code'}}</td>
         <td>
-          <input type="number" class="form-control mb-2 impression" (change)="calcTable()" [(ngModel)]="cr" id="inlineFormInput" placeholder="Ex:0.02"
-            name="cr">
+          <input type="number" class="form-control mb-2 impression" (change)="calcTable(i)" [(ngModel)]="datas[i].cr" id="inlineFormInput"
+            placeholder="Ex:0.02" name="cr">
         </td>
-        <td class="regs">{{regs}}</td>
-        <td class="cpa">{{cpa}}</td>
+        <td class="regs">{{data.regs | number}}</td>
+        <td class="cpa">{{data.cpa | currency:'$':'code'}}</td>
 
       </tr>
     </tbody>
   </table>
 
-  <button (click)="calcTable()" mat-raised-button color="primary">Calculation</button>
+  <button (click)="addLine()" mat-raised-button color="primary">Add a line</button>
 </div>

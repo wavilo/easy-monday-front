@@ -1,16 +1,58 @@
-<h2>Google Analytics</h2>
-
-
-<div id="embed-api-auth-container"></div>
-
 <div class="container">
-  <div id="view-selector-1-container"></div>
-  <div class="row">
+  <h2>Google Analytics</h2>
+  <p>This component can retrieve the stats from your Google Analytics account</p>
+  <button mat-button id="ga-refresh">Load GA </button>
 
-    <div class="col-sm" id="chart-1-container"></div>
-    <div class="col-sm" id="chart-2-container"></div>
-    <div class="col-sm" id="chart-3-container"></div>
 
+  <div id="embed-api-auth-container"></div>
+
+  <div class="container ">
+
+    <div class="auth">
+      <div id="view-selector-1-container"></div>
+    </div>
+
+    <div class="row all-stats">
+
+      <mat-card class="card-analytics">
+        <mat-card-header>
+          <mat-card-title class="title-ga">Last Week Stats</mat-card-title>
+          <mat-card-subtitle>By Sessions</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <div id="chart-1-container"></div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="card-analytics">
+        <mat-card-header>
+          <mat-card-title class="title-ga">Top Countries</mat-card-title>
+          <mat-card-subtitle>By Sessions</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <div id="chart-2-container"></div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="card-analytics">
+        <mat-card-header>
+          <mat-card-title class="title-ga">Traffic Sources</mat-card-title>
+          <mat-card-subtitle>By Sessions</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <div id="chart-3-container"></div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="card-analytics">
+        <mat-card-header>
+          <mat-card-title class="title-ga">Top Pages</mat-card-title>
+          <mat-card-subtitle>By PageViews</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <div id="chart-4-container"></div>
+        </mat-card-content>
+      </mat-card>
+
+    </div>
   </div>
-
-</div>

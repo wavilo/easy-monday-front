@@ -7,4 +7,9 @@
   width: 250px;
   margin-bottom: 25px;
   margin-right: auto;
+  margin-left: auto;
+}
+
+.yt-row {
+  margin-bottom: 30px;
 }

@@ -8,6 +8,16 @@
   right: 0;
 }
 
+/* .bottom-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100vh;
+  bottom: 0;
+  left: 0;
+  right: 0;
+} */
+
 .mat-toolbar-row, .mat-toolbar-single-row {
   height: 45px;
 }
@@ -62,7 +72,13 @@ img {
   margin-left: 20px;
 }
 
-
+footer {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 100;
+ }
 
 /* @media screen and (max-width: 600px)
 {

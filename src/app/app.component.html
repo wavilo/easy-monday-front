@@ -31,9 +31,9 @@
         <a mat-list-item routerLink="/analytics">
           <img src="../assets/Google-Analytics.png">
         </a>
-        <a mat-list-item routerLink="/adwords">
+        <!-- <a mat-list-item routerLink="/adwords">
           <img src="../assets/AdWords.png">
-        </a>
+        </a> -->
         <a mat-list-item routerLink="/influencer">
           <img src="../assets/influencer.svg">
         </a>
@@ -58,48 +58,40 @@
 
 
 
-  <div class="footer">
-    <footer>
-      <p *ngIf="!userTruc.currentUser">Please SignUp to be able to add and store a comment</p>
-
-
-      <mat-expansion-panel *ngIf="userTruc.currentUser">
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            ⇪ Add a Comment
-          </mat-panel-title>
-          <mat-panel-description>
-            Choose your week and comment
-            <mat-icon class="icon-panel" svgIcon="user"></mat-icon>
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-
-
-        <mat-form-field>
-          <input name="week" [(ngModel)]="formCreds.week" type="number" matInput placeholder="Week">
-        </mat-form-field>
-
-        <mat-form-field class="field-comment">
-          <textarea cols="500" name="comment" [(ngModel)]="formCreds.comment" matInput placeholder="Comment"></textarea>
-        </mat-form-field>
-        <!-- <mat-form-field class="field-comment">
-        <textarea matInput placeholder="#2 Comment"></textarea>
-      </mat-form-field>
-      <mat-form-field class="field-comment">
-        <textarea matInput placeholder="#3 Comment"></textarea>
-      </mat-form-field>
-      <mat-form-field class="field-comment">
-        <textarea matInput placeholder="#4 Comment"></textarea>
-      </mat-form-field> -->
-
-        <mat-action-row>
-          <button (click)="saveComment()" mat-button color="primary">Save</button>
-        </mat-action-row>
-      </mat-expansion-panel>
 
 
 
 
-    </footer>
-  </div>
 </div>
+
+<footer>
+  <p *ngIf="!userTruc.currentUser">Please SignUp to be able to add and store a comment</p>
+
+
+  <mat-expansion-panel *ngIf="userTruc.currentUser">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        ⇪ Add a Comment
+      </mat-panel-title>
+      <mat-panel-description>
+        Choose your week and comment
+        <mat-icon class="icon-panel" svgIcon="user"></mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+
+    <mat-form-field>
+      <input name="week" [(ngModel)]="formCreds.week" type="number" matInput placeholder="Week">
+    </mat-form-field>
+
+    <mat-form-field class="field-comment">
+      <input cols="500" name="comment" [(ngModel)]="formCreds.comment" matInput placeholder="Comment">
+    </mat-form-field>
+
+
+    <mat-action-row>
+      <button (click)="saveComment()" mat-button color="primary">Save</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+
+</footer>

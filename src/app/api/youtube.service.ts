@@ -21,9 +21,11 @@ export class YoutubeService {
 
   getLastYtVideos(publishedAfter: Date, publishedBefore: Date, query){
     const afterStr = publishedAfter.toISOString();
+    console.log("date" + afterStr);
     const beforStr =  publishedBefore.toISOString();
+    console.log("date" + beforStr);
     return this.ajaxTruc
-      .get(`https://www.googleapis.com/youtube/v3/search?part=snippet&publishedAfter=${afterStr}&publishedBefore=${beforStr}&q=${query}&regionCode=fr&key=${environment.youtube_key}`)
+      .get(`https://www.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&publishedAfter=${afterStr}&publishedBefore=${beforStr}&q=${query}&maxResults=50&regionCode=FR&relevanceLanguage=fr&key=${environment.youtube_key}`)
       .toPromise();
   }
   

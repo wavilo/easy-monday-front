@@ -21,14 +21,32 @@ li {
 }
 
 /* For the card */
-.card {
-  max-width: 400px;
-  border: 1px solid black;
+.img-twitch {
+  text-align: center;
+  width: 250px;
+}
+
+.card-twitch {
+  width: 250px;
+  margin-bottom: 25px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  /* background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg'); */
   background-size: cover;
 }
 
+mat-card-actions {
+  text-align: center;
+}
+
+result {
+  margin-bottom: 20px;
+}
+
+.yt-row {
+  margin-bottom: 30px;
+}
 

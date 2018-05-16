@@ -8,7 +8,7 @@ import { TwitchService, TwitchTopList } from '../api/twitch.service';
 })
 export class TwitchComponent implements OnInit {
 
-  gameQuery: string = "";
+  gameQuery: string;
   twitchVideosList: Array<TwitchTopList>
   twitchFullList: Array<TwitchTopList>
   
@@ -17,7 +17,6 @@ export class TwitchComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    //this.getTwitchList()
     this.getFullTwitchList()
   }
 
@@ -33,9 +32,7 @@ export class TwitchComponent implements OnInit {
     });
   }
 
-  searchTwitch(){
-    
-  }
+
 
 }
 

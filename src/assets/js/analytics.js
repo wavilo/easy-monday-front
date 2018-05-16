@@ -1,5 +1,3 @@
-console.log("hello");
-
 (function(w,d,s,g,js,fs){
   g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(f){this.q.push(f);}};
   js=d.createElement(s);fs=d.getElementsByTagName(s)[0];
@@ -83,6 +81,24 @@ var dataChart3 = new gapi.analytics.googleCharts.DataChart({
   }
 });
 
+var dataChart4 = new gapi.analytics.googleCharts.DataChart({
+  query: {
+    'dimensions': 'ga:pagePath',
+    'metrics': 'ga:pageviews',
+    'start-date': '7daysAgo',
+    'end-date': 'yesterday',
+    'sort': '-ga:pageviews',
+    'max-results': '6'
+  },
+  chart: {
+    type: 'TABLE',
+    container: 'chart-4-container',
+    options: {
+      width: '100%'
+    }
+  }
+});
+
 
 
 
@@ -104,8 +120,14 @@ viewSelector1.on('change', function(ids) {
   dataChart3.set({query: {ids: ids}}).execute();
 });
 
+viewSelector1.on('change', function(ids) {
+  dataChart4.set({query: {ids: ids}}).execute();
+});
+
 
 
 
 
 });
+
+

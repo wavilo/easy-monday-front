@@ -1,10 +1,11 @@
-<p>Get the top </p>
-{{gameQuery}}
-
 <div class="container">
+  <h2>Twitch</h2>
+  <p>This component display the Top 100 watched games in Twitch from the past week in France</p>
+  <p>You can filtered for a specific game</p>
+
   <form class="example-form" (ngSubmit)="getTwitchList()">
     <mat-form-field class="example-full-width">
-      <input type="text" name="gameQuery" [(ngModel)]="gameQuery" matInput placeholder="Your game...">
+      <input type="search" name="gameQuery" [(ngModel)]="gameQuery" matInput placeholder="Your game...">
     </mat-form-field>
   </form>
 </div>
@@ -12,18 +13,18 @@
 <hr>
 
 
-<div class="container-fluid">
-  <div class="row">
+<div class="container">
+  <div class="row yt-row">
 
-    <mat-card class="card-twitch" *ngFor="let oneTwitchVid of twitchFullList">
+    <mat-card class="card-twitch" *ngFor="let oneTwitchVid of (twitchFullList | filteredBySearch : gameQuery) , let i = index ">
       <mat-card-header>
-        <mat-card-title>#1 {{oneTwitchVid.game.localized_name | slice:0:16}}</mat-card-title>
-        <mat-card-subtitle>Number of views: {{oneTwitchVid.viewers}}</mat-card-subtitle>
+        <mat-card-title>#{{i + 1}} - {{oneTwitchVid.game.localized_name | slice:0:16}}</mat-card-title>
+        <mat-card-subtitle>Number of views: {{oneTwitchVid.viewers | number}}</mat-card-subtitle>
       </mat-card-header>
       <img mat-card-image class="img-twitch" src="{{oneTwitchVid.game.box.large}}">
       <mat-card-content>
-        <p>Popularity: {{oneTwitchVid.game.popularity}}</p>
-        <p>Number of channels: {{oneTwitchVid.channels}}</p>
+        <p>Popularity: {{oneTwitchVid.game.popularity | number}}</p>
+        <p>Number of channels: {{oneTwitchVid.channels | number}}</p>
       </mat-card-content>
     </mat-card>
 
