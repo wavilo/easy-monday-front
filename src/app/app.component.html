@@ -36,14 +36,17 @@
         <!-- <a mat-list-item routerLink="/adwords">
           <img src="../assets/AdWords.png">
         </a> -->
-        <a mat-list-item routerLink="/influencer" matTooltip="Influencer">
-          <img src="../assets/influencer.svg">
+        <a mat-list-item routerLink="/youtubegaming" matTooltip="Youtube Gaming">
+          <img src="../assets/youtube-gaming-logo.png">
         </a>
         <a mat-list-item routerLink="/youtube" matTooltip="Youtube">
           <img src="../assets/youtube.png">
         </a>
         <a mat-list-item routerLink="/twitch" matTooltip="Twitch">
           <img src="../assets/twitch.png">
+        </a>
+        <a mat-list-item routerLink="/influencer" matTooltip="Influencer">
+          <img src="../assets/influencer.svg">
         </a>
         <a mat-list-item routerLink="/tools" matTooltip="Tool">
           <img src="../assets/tools_black.png">
@@ -67,7 +70,7 @@
 </div>
 
 <footer>
-  <p *ngIf="!userTruc.currentUser">Please SignUp to be able to add and store a comment</p>
+  <p *ngIf="!userTruc.currentUser">Please Signup to be able to add and store comments</p>
 
 
   <mat-expansion-panel *ngIf="userTruc.currentUser">

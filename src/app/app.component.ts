@@ -40,9 +40,18 @@ export class AppComponent {
     iconRegistry.addSvgIcon(
       'power-off',
       sanitizer.bypassSecurityTrustResourceUrl('../assets/baseline-power_settings_new-24px.svg'));
-      iconRegistry.addSvgIcon(
+    iconRegistry.addSvgIcon(
         'user',
         sanitizer.bypassSecurityTrustResourceUrl('../assets/baseline-account_circle-24px.svg'));
+    iconRegistry.addSvgIcon(
+        'view',
+        sanitizer.bypassSecurityTrustResourceUrl('../assets/baseline-visibility-24px.svg'));
+    iconRegistry.addSvgIcon(
+      'thumb',
+      sanitizer.bypassSecurityTrustResourceUrl('../assets/baseline-thumb_up-24px.svg'));
+    iconRegistry.addSvgIcon(
+      'comment',
+      sanitizer.bypassSecurityTrustResourceUrl('../assets/baseline-comment-24px.svg'));
   }
 
   ngOnDestroy(): void {

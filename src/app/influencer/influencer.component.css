@@ -16,3 +16,9 @@
   padding-right: 0px;
   padding-left: 0px;
 }
+
+th {
+  width: 30px;
+  background-color: rgb(158, 158, 172);
+  color: white;
+}

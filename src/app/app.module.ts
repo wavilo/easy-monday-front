@@ -60,6 +60,8 @@ import { InfluencerComponent } from './influencer/influencer.component';
 import { TwitchComponent } from './twitch/twitch.component';
 import { AdwordsComponent } from './adwords/adwords.component';
 import { TwitchService } from './api/twitch.service';
+import { YoutubegamingComponent } from './youtubegaming/youtubegaming.component';
+import { SortPipe } from './pipes-folder/sort.pipe';
 
 
 
@@ -80,6 +82,8 @@ import { TwitchService } from './api/twitch.service';
     InfluencerComponent,
     TwitchComponent,
     AdwordsComponent,
+    YoutubegamingComponent,
+    SortPipe,
   ],
   imports: [
     BrowserModule,

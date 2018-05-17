@@ -19,7 +19,7 @@
 } */
 
 .mat-toolbar-row, .mat-toolbar-single-row {
-  height: 45px;
+  height: 56px;
 }
 .example-is-mobile .example-toolbar {
   position: fixed;
@@ -80,9 +80,16 @@ footer {
   z-index: 100;
  }
 
-/* @media screen and (max-width: 600px)
-{
+ footer p {
+   background-color: rgb(70, 66, 66);
+   color: white;
+   text-align: center;
+   padding: 5px;
+   padding-top: 8px;
+ }
 
-} */
+
+
+
 
 

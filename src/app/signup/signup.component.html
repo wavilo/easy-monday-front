@@ -23,15 +23,16 @@
 <div class="container">
   <form class="example-form" (ngSubmit)="signSubmit()">
     <mat-form-field class="example-full-width">
-      <input type="text" name="name" [(ngModel)]="formCreds.name" matInput placeholder="Your name" value="Isaac Asimov">
+      <input type="text" name="name" [(ngModel)]="formCreds.name" matInput placeholder="Name" value="Isaac Asimov">
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-      <input type="email" name="email" [(ngModel)]="formCreds.email" matInput placeholder="Your email" value="isaac.asimov@gmail.com">
+      <input type="email" name="email" [(ngModel)]="formCreds.email" matInput placeholder="Email" value="isaac.asimov@gmail.com">
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-      <input type="password" name="password" [(ngModel)]="formCreds.password" matInput placeholder="Your password" value="****">
+      <input type="password" name="password" [(ngModel)]="formCreds.password" matInput placeholder="Password" matTooltipPosition="below"
+        matTooltip="With Letters & Numbers" value="****">
     </mat-form-field>
 
     <button mat-raised-button>Sign Up</button>

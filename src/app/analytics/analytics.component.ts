@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+
+
 @Component({
   selector: 'app-analytics',
   templateUrl: './analytics.component.html',
@@ -8,13 +10,15 @@ import { Component, OnInit } from '@angular/core';
 export class AnalyticsComponent implements OnInit {
 
   constructor(
-    
+
   ) { 
     
   }
 
   ngOnInit() {
   }
+
+
 
   clickRefresh(){
     window.location.reload();

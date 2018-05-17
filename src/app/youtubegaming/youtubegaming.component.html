@@ -1,0 +1,53 @@
+<div class="container">
+  <h2>Youtube Gaming trends</h2>
+  <p>This component display the Top 50 most watched gaming videos in France in {{youtubeFullList[0].snippet.publishedAt | date:
+    'MMMM'}}
+  </p>
+
+  <!-- <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input type="search" name="gameQuery" [(ngModel)]="gameQuery" matInput placeholder="Your game...">
+    </mat-form-field>
+  </form> -->
+</div>
+
+<hr>
+
+
+<div class="container">
+  <div class="row yt-row">
+
+    <mat-card class="card-twitch" *ngFor="let oneYoutubeVid of (youtubeFullList | sort)  , let i = index ">
+      <mat-card-header>
+        <mat-card-title>#{{i + 1}} - {{oneYoutubeVid.snippet.channelTitle | slice:0:16}}</mat-card-title>
+        <mat-card-subtitle>{{oneYoutubeVid.snippet.publishedAt | date}}</mat-card-subtitle>
+      </mat-card-header>
+
+      <img mat-card-image class="img-twitch" src="{{oneYoutubeVid.snippet.thumbnails.high.url}}">
+
+
+      <mat-card-content>
+        <p>
+          <i> {{oneYoutubeVid.snippet.description | slice:0:100}}...</i>
+        </p>
+
+
+        <mat-icon svgIcon="view"></mat-icon>
+        <p>{{oneYoutubeVid.statistics.viewCount | number}}</p>
+
+        <mat-icon svgIcon="thumb"></mat-icon>
+        <p>{{oneYoutubeVid.statistics.likeCount | number}}</p>
+
+        <mat-icon svgIcon="comment"></mat-icon>
+        <p>{{oneYoutubeVid.statistics.commentCount | number}}</p>
+
+      </mat-card-content>
+      <mat-card-actions>
+        <a href="https://www.youtube.com/watch?v={{oneYoutubeVid.id}}" target="_blank">
+          <button mat-button mat-raised-button color="primary">Go see the video</button>
+        </a>
+      </mat-card-actions>
+    </mat-card>
+
+  </div>
+</div>

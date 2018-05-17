@@ -15,7 +15,7 @@ export class WeekPipe implements PipeTransform {
   }
   searchTerm = searchTerm.toLowerCase();
   const filteredArray = [];
-console.log({value});
+  console.log({value});
 
   value.forEach((oneTwitchVid) => {
     const lowerResearch = oneTwitchVid.game.name.toLowerCase()
