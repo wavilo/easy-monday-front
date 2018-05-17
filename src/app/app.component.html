@@ -15,10 +15,12 @@
     </span>
 
     <span *ngIf="userTruc.currentUser">
-      <button mat-button routerLink="/comments">
+
+      <button mat-button routerLink="/comments" matTooltip="Your comments">
         <mat-icon svgIcon="user"></mat-icon>
       </button>
-      <button mat-button (click)="logoutClick()">
+
+      <button mat-button (click)="logoutClick()" matTooltip="Log Out !">
         <mat-icon svgIcon="power-off"></mat-icon>
       </button>
     </span>
@@ -28,22 +30,22 @@
   <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
     <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
       <mat-nav-list>
-        <a mat-list-item routerLink="/analytics">
+        <a mat-list-item routerLink="/analytics" matTooltip="Google Analytics">
           <img src="../assets/Google-Analytics.png">
         </a>
         <!-- <a mat-list-item routerLink="/adwords">
           <img src="../assets/AdWords.png">
         </a> -->
-        <a mat-list-item routerLink="/influencer">
+        <a mat-list-item routerLink="/influencer" matTooltip="Influencer">
           <img src="../assets/influencer.svg">
         </a>
-        <a mat-list-item routerLink="/youtube">
+        <a mat-list-item routerLink="/youtube" matTooltip="Youtube">
           <img src="../assets/youtube.png">
         </a>
-        <a mat-list-item routerLink="/twitch">
+        <a mat-list-item routerLink="/twitch" matTooltip="Twitch">
           <img src="../assets/twitch.png">
         </a>
-        <a mat-list-item routerLink="/tools">
+        <a mat-list-item routerLink="/tools" matTooltip="Tool">
           <img src="../assets/tools_black.png">
         </a>
       </mat-nav-list>

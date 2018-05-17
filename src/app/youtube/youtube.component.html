@@ -1,7 +1,6 @@
 <div class="container">
   <h2>Youtube</h2>
-  <p>This module can retrieve the youtube videos from a specific period</p>
-  <p>It's sorted by number of views</p>
+  <p>This module can retrieve the youtube videos from a specific period and are sorted by number of views</p>
   <mat-form-field>
     <mat-label>Start Date</mat-label>
     <input matInput [matDatepicker]="picker1" [(ngModel)]="publishedAfter">
@@ -23,7 +22,7 @@
         <input type="text" name="query" [(ngModel)]="query" matInput placeholder="Search...">
       </mat-form-field>
 
-      <button mat-raised-button color="primary">Get Me the Videos !</button>
+      <button mat-raised-button (click)="show()" color="primary">Get Me the Videos !</button>
     </form>
   </div>
 </div>
@@ -32,10 +31,10 @@
 <hr>
 
 
-<div class="container result">
+<div class="container result" *ngIf="showComponent">
   <p>Number of videos about
     <b>{{query}}</b>:
-    <b>{{youtubeVideoNumber}}</b>
+    <b>{{youtubeVideoNumber | number}}</b>
   </p>
   <p>Here are a sample of top 50 videos:</p>
 

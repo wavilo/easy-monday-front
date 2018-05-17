@@ -1,15 +1,20 @@
 <div class="container">
 
-  <h4>Week: {{comment?.week}}</h4>
-  <h5>
-    <i>Created: {{comment?.createdAt}}</i>
-  </h5>
+  <div>
 
-  <ol>
-    <li *ngFor="let onlyOneComment of comment?.comment">
-      <p>{{onlyOneComment}}</p>
-    </li>
-  </ol>
-  <!-- <button mat-button mat-raised-button color="primary">Edit</button> -->
-  <button mat-button mat-raised-button color="warn" (click)="deleteClick()">Delete</button>
+    <mat-card class="card-analytics">
+      <mat-card-header>
+        <mat-card-title class="comment-title">Week: {{comment?.week}}</mat-card-title>
+        <mat-card-subtitle>Created: {{comment?.createdAt | date : 'longDate' }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <ol>
+          <li *ngFor="let onlyOneComment of comment?.comment">
+            <p>{{onlyOneComment}}</p>
+          </li>
+        </ol>
+        <button mat-button mat-raised-button color="warn" (click)="deleteClick()">Delete</button>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>

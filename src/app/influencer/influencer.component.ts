@@ -12,7 +12,8 @@ export class InfluencerComponent implements OnInit {
   youtubeVidStats: Array<YoutubeStatsFromApi> = [];
   youtubeVidSnippet: Array<YoutubeSnippetFromApi> = [];
   idVideo: string;
-  
+  showComponent: boolean = false;
+
   constructor(
     public youtubeStats: YoutubeService,
     public youtubeSnippet: YoutubeService,
@@ -29,10 +30,15 @@ export class InfluencerComponent implements OnInit {
 
         this.youtubeVidStats.push(result.items[0].statistics);
         this.youtubeVidSnippet.push(result.items[0].snippet);
+        console.log(this.youtubeVidSnippet);
       })
       .catch((err) =>{
         console.log('Youtube Stats Error', err)
       });
+  }
+
+  show(){
+    this.showComponent = true;
   }
 
 

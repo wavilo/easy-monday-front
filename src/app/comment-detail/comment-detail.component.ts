@@ -34,7 +34,7 @@ export class CommentDetailComponent implements OnInit {
         this.comment = result
       })
       .catch((err) => {
-        console.log('Phone details error');
+        console.log('Comment details error');
         console.log(err);
       })
   }

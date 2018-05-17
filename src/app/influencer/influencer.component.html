@@ -1,6 +1,6 @@
 <div class="container input-id">
   <h2>Influencer Report</h2>
-  <p>This component can help retrieving stats about a specific influencer video</p>
+  <p>This component can help retrieving stats about a specific Youtube video</p>
   <p>The video ID is visible at the end of the URL - for instance https://www.youtube.com/watch?v=
     <b>oT8u2Qy78ag</b>
   </p>
@@ -11,13 +11,13 @@
 
   </form>
 
-  <button (click)="getYoutubeStats()" mat-raised-button color="primary">Get Me the Stats !</button>
+  <button (click)="getYoutubeStats(); show()" mat-raised-button color="primary">Get Me the Stats !</button>
 
 </div>
 
-<!-- [(ngModel)]="formCreds.name" -->
 
-<div class="container-fluid">
+
+<div class="container-fluid" *ngIf="showComponent">
   <div class="row">
     <div class="col-sm">
       <table class="table table-hover ">
@@ -49,10 +49,10 @@
         </thead>
         <tbody>
           <tr *ngFor="let oneYtStats of youtubeVidStats">
-            <td>{{oneYtStats.viewCount}}</td>
-            <td>{{oneYtStats.likeCount}}</td>
-            <td>{{oneYtStats.dislikeCount}}</td>
-            <td>{{oneYtStats.commentCount}}</td>
+            <td>{{oneYtStats.viewCount | number}}</td>
+            <td>{{oneYtStats.likeCount | number}}</td>
+            <td>{{oneYtStats.dislikeCount | number}}</td>
+            <td>{{oneYtStats.commentCount | number}}</td>
           </tr>
         </tbody>
       </table>

@@ -1,4 +1,4 @@
-h4 {
+/* h4 {
   margin-top: 20px;
 }
 
@@ -16,4 +16,20 @@ button {
 
 i {
   color: gray;
+} */
+
+.card-analytics {
+  width: 500px;
+  margin-bottom: 25px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+}
+
+.all-stats {
+  margin-bottom: 40px;
+}
+
+.mat-card-title {
+  font-size: 25px;
 }

@@ -23,6 +23,7 @@ export class YoutubeComponent implements OnInit {
 
   youtubeVideosList: Array<YoutubeListVideos> ;
   youtubeVideoNumber: number;
+  showComponent: boolean = false;
 
   classState: any = {
     hidden: true,
@@ -58,5 +59,8 @@ export class YoutubeComponent implements OnInit {
     this.classState.show = true;
   }
 
+  show(){
+    this.showComponent = true;
+  }
 
 }

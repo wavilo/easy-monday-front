@@ -10,18 +10,21 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class UserAccountComponent implements OnInit {
 
   comments: Comment[] = [];
-
+  commentId: string;
 
   constructor(
     public apiTruc: CommentService,
+    private reqTruc: ActivatedRoute,
+    private resTruc: Router,
 
   ) { }
 
   ngOnInit() {
     this.apiTruc.getList()
       .then((result: Comment[])=>{
-        console.log(result);
+        
         this.comments = result;
+        console.log("the result " + this.comments);
       })
       .catch((err)=>{
         console.log("Comment List error");
@@ -30,6 +33,23 @@ export class UserAccountComponent implements OnInit {
   }
 
 
+  deleteClick(){
+    const isOkay = confirm(`Are you sure you want to delete this comment`)
+
+    if (!isOkay){
+      return;
+    }
+console.log("commentID: " + this.commentId)
+    this.apiTruc.delete(this.commentId)
+      .then((result)=>{
+        
+        this.resTruc.navigateByUrl('/comments');
+      })
+      .catch((err)=>{
+        console.log("Delete function")
+        console.log(err);
+      })
+  }
 
 
 

@@ -1,15 +1,25 @@
-<h2>
-  Your weekly comments</h2>
+<div class="container">
+  <h2>Your weekly comments</h2>
 
 
-<ul>
-  <li class="first-li" *ngFor="let oneComment of comments">
-    <h4>Week: {{oneComment.week}}</h4>
-    <ol>
-      <li *ngFor="let onlyOneComment of oneComment.comment">
-        <p>{{onlyOneComment}}</p>
-      </li>
-    </ol>
-    <button mat-button mat-raised-button color="primary" [routerLink]="['/comment', oneComment._id]">See details</button>
-  </li>
-</ul>
+  <div class="row all-stats">
+
+    <mat-card class="card-analytics" *ngFor="let oneComment of comments">
+      <mat-card-header>
+        <mat-card-title class="title-ga">Week: {{oneComment.week}}</mat-card-title>
+        <!-- <mat-card-subtitle>Created: {{oneComment?.createdAt | date : 'longDate' }}</mat-card-subtitle> -->
+      </mat-card-header>
+      <mat-card-content>
+        <ol>
+          <li *ngFor="let onlyOneComment of oneComment.comment">
+            <p>{{onlyOneComment}}</p>
+          </li>
+        </ol>
+        <button mat-button mat-raised-button color="primary" [routerLink]="['/comment', oneComment._id]">See details</button>
+
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+
+</div>

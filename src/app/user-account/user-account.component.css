@@ -11,3 +11,25 @@ ul {
 }
 
 
+.chart {
+  padding: 10px;
+}
+
+.auth {
+  margin: 10px;
+}
+
+.card-analytics {
+  width: 500px;
+  margin-bottom: 25px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.all-stats {
+  margin-bottom: 40px;
+}
+
+.title-ga {
+  font-size: 20px;
+}
