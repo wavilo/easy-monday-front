@@ -50,7 +50,7 @@ h1.example-app-name {
 
 
 img {
-  height: 20px;
+  height: 25px;
 }
 
 .fill-right {
@@ -87,6 +87,11 @@ footer {
    padding: 5px;
    padding-top: 8px;
  }
+
+.btn-tool {
+  width: 30px;
+}
+
 
 
 

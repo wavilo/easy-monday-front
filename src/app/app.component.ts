@@ -20,6 +20,7 @@ export class AppComponent {
   panelOpenState: boolean = false;
   formCreds: CommentCredentials = new CommentCredentials();
 
+  today: number = Date.now();
 
   //for Material Angular
   mobileQuery: MediaQueryList;
@@ -88,8 +89,6 @@ export class AppComponent {
   }
 
   }
-
-
 
 
 

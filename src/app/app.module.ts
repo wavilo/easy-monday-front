@@ -66,6 +66,7 @@ import { SortPipe } from './pipes-folder/sort.pipe';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -84,6 +85,7 @@ import { SortPipe } from './pipes-folder/sort.pipe';
     AdwordsComponent,
     YoutubegamingComponent,
     SortPipe,
+
   ],
   imports: [
     BrowserModule,

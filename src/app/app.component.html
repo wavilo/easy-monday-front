@@ -4,7 +4,9 @@
       <mat-icon>menu</mat-icon>
     </button>
 
-    <button class="example-app-name logo" mat-button routerLink="/">Easy Monday</button>
+    <button class="example-app-name logo" mat-button routerLink="/">Easy Monday - W:
+      <b>{{today | date: 'w'}}</b>
+    </button>
 
 
     <span class="fill-right"></span>
@@ -16,13 +18,16 @@
 
     <span *ngIf="userTruc.currentUser">
 
-      <button mat-button routerLink="/comments" matTooltip="Your comments">
+      <button class="btn-tool" mat-button routerLink="/comments" matTooltip="Your comments">
         <mat-icon svgIcon="user"></mat-icon>
       </button>
 
       <button mat-button (click)="logoutClick()" matTooltip="Log Out !">
         <mat-icon svgIcon="power-off"></mat-icon>
       </button>
+
+
+
     </span>
 
   </mat-toolbar>
@@ -86,7 +91,7 @@
 
 
     <mat-form-field>
-      <input name="week" [(ngModel)]="formCreds.week" type="number" matInput placeholder="Week">
+      <input name="week" [(ngModel)]="formCreds.week" type="number" matInput placeholder="Current Week: {{today | date: 'w'}}">
     </mat-form-field>
 
     <mat-form-field class="field-comment">
