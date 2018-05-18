@@ -5,6 +5,7 @@ import { MediaMatcher } from '@angular/cdk/layout';
 import { MatIconRegistry } from '@angular/material';
 import { DomSanitizer } from '@angular/platform-browser';
 import { CommentService, CommentCredentials } from './api/comment.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -34,6 +35,7 @@ export class AppComponent {
     media: MediaMatcher,
     iconRegistry: MatIconRegistry, 
     sanitizer: DomSanitizer,
+    private resTruc: Router,
   ){
     this.mobileQuery = media.matchMedia('(max-width: 2200px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
@@ -69,6 +71,9 @@ export class AppComponent {
 
   logoutClick(){
     this.userTruc.logout()
+      .then(()=>{
+          this.resTruc.navigateByUrl('/'); 
+      })
       .catch((err) => {
         console.log("App lOGOUT error");
         console.log(err);
