@@ -1,14 +1,19 @@
 <div class="container">
   <h2>Youtube Gaming trends</h2>
-  <p>This component display the Top 50 most watched gaming videos in France in {{youtubeFullList[0].snippet.publishedAt | date:
-    'MMMM'}}
-  </p>
+  <p>This component display the Top 50 most watched gaming videos in the past 2 weeks per country.</p>
 
-  <!-- <form class="example-form">
+
+  <form class="example-form" (ngSubmit)="getFullYoutubeList()">
     <mat-form-field class="example-full-width">
-      <input type="search" name="gameQuery" [(ngModel)]="gameQuery" matInput placeholder="Your game...">
+      <mat-select placeholder="Select a language" name="language" [(ngModel)]="language">
+        <mat-option *ngFor="let oneLanguage of allLanguages" value="{{oneLanguage.value}}">{{oneLanguage.viewValue}}</mat-option>
+      </mat-select>
     </mat-form-field>
-  </form> -->
+
+    <button mat-raised-button color="primary">Get Me the Videos !</button>
+  </form>
+
+
 </div>
 
 <hr>

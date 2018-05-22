@@ -21,17 +21,17 @@ export class YoutubeService {
 
   getLastYtVideos(publishedAfter: Date, publishedBefore: Date, query){
     const afterStr = publishedAfter.toISOString();
-    console.log("date" + afterStr);
+    // console.log("date" + afterStr);
     const beforStr =  publishedBefore.toISOString();
-    console.log("date" + beforStr);
+    // console.log("date" + beforStr);
     return this.ajaxTruc
       .get(`https://www.googleapis.com/youtube/v3/search?part=snippet&order=viewCount&publishedAfter=${afterStr}&publishedBefore=${beforStr}&q=${query}&maxResults=50&key=AIzaSyA1FJ3KpKtRkAEVL-twLgfUpCi_tWaApLw`)
       .toPromise();
   }
 
-  getTopGamingVideos(){
+  getTopGamingVideos(language: string){
     return this.ajaxTruc
-      .get('https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&hl=fr&regionCode=FR&maxResults=50&videoCategoryId=20&key=AIzaSyA1FJ3KpKtRkAEVL-twLgfUpCi_tWaApLw')
+      .get(`https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&hl=${language}&regionCode=${language}&maxResults=50&videoCategoryId=20&key=AIzaSyA1FJ3KpKtRkAEVL-twLgfUpCi_tWaApLw`)
       .toPromise();
   }
   

@@ -18,3 +18,7 @@ mat-card-actions, mat-card-content {
   text-align: center;
 }
 
+button {
+  margin-left: 20px;
+}
+
