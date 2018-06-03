@@ -62,6 +62,7 @@ import { AdwordsComponent } from './adwords/adwords.component';
 import { TwitchService } from './api/twitch.service';
 import { YoutubegamingComponent } from './youtubegaming/youtubegaming.component';
 import { SortPipe } from './pipes-folder/sort.pipe';
+import { TableauComponent } from './tableau/tableau.component';
 
 
 
@@ -85,6 +86,7 @@ import { SortPipe } from './pipes-folder/sort.pipe';
     AdwordsComponent,
     YoutubegamingComponent,
     SortPipe,
+    TableauComponent,
 
   ],
   imports: [

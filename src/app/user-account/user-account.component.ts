@@ -24,7 +24,7 @@ export class UserAccountComponent implements OnInit {
       .then((result: Comment[])=>{
         
         this.comments = result;
-        console.log("the result " + this.comments);
+        console.log("the result " + result);
       })
       .catch((err)=>{
         console.log("Comment List error");

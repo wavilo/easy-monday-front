@@ -1,0 +1,20 @@
+
+
+.card-analytics {
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 70px;
+}
+
+
+.title-ga {
+  font-size: 20px;
+}
+
+mat-card-actions, mat-card-content {
+  text-align: center;
+}
+
+button {
+  margin-top: 20px;
+}

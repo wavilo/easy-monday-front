@@ -13,6 +13,7 @@ import { InfluencerComponent } from './influencer/influencer.component';
 import { TwitchComponent } from './twitch/twitch.component';
 import { AdwordsComponent } from './adwords/adwords.component';
 import { YoutubegamingComponent } from './youtubegaming/youtubegaming.component';
+import { TableauComponent } from './tableau/tableau.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent},
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: "twitch", component: TwitchComponent },
   { path: "adwords", component: AdwordsComponent },
   { path: "youtubegaming", component:YoutubegamingComponent },
+  { path: "tableau", component: TableauComponent},
 
   { path: '**', component: NotFoundComponent}
 ];

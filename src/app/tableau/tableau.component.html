@@ -1,0 +1,20 @@
+<div class="container ">
+  <h2>Tableau Datas</h2>
+  <p>This component can retrieve the stats from Tableau (right now the datas are public)</p>
+
+
+  <div class="row">
+
+    <mat-card class="card-analytics">
+      <mat-card-header>
+        <mat-card-title class="title-ga">Tableau Stats</mat-card-title>
+        <mat-card-subtitle>From public Data source</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div id="tableauViz"></div>
+        <button mat-raised-button (click)="exportToPDF()" color="primary">Export to PDF</button>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</div>
